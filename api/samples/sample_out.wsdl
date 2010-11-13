@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap_http="http://schemas.xmlsoap.org/soap/http"
+xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:soap_enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:s0="http://developer.intuit.com/"
+xmlns:soap12_enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:soap_env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12_env="http://www.w3.org/2003/05/soap-envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://developer.intuit.com/" name="QuickbooksWS">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://developer.intuit.com/" elementFormDefault="qualified">
+			<xs:element name="myfn" type="s0:myfn" />
+			<xs:element name="myfnResponse" type="s0:myfnResponse" />
+			<xs:complexType name="myfn">
+				<xs:sequence>
+					<xs:element name="arg1" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="arg2" type="xs:integer" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="myfnResponse">
+				<xs:sequence>
+					<xs:element name="myfnResult" type="None:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="myfn">
+		<wsdl:part name="myfn" element="s0:myfn" />
+	</wsdl:message>
+	<wsdl:service name="QuickbooksWS">
+		<wsdl:port name="QuickbooksWS" binding="s0:QuickbooksWS">
+			<soap:address location="https://app.rhinoaccounting.com" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:portType name="QuickbooksWS">
+		<wsdl:operation name="myfn" parameterOrder="myfn">
+			<wsdl:input name="myfn" message="s0:myfn" />
+			<wsdl:output name="myfnResponse" message="s0:myfnResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="QuickbooksWS" type="s0:QuickbooksWS">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="myfn">
+			<soap:operation soapAction="myfn" style="document" />
+			<wsdl:input name="myfn">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="myfnResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

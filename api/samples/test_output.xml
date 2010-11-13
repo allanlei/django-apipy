@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<senv:Envelope xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
+xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="http://developer.intuit.com/" xmlns:s12env="http://www.w3.org/2003/05/soap-envelope/"
+xmlns:s12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<senv:Header />
+	<senv:Body>
+		<s0:serverVersionResponse>
+			<s0:serverVersionResult xsi:type="xs:string">v0.01</s0:serverVersionResult>
+		</s0:serverVersionResponse>
+	</senv:Body>
+</senv:Envelope>
+
+
+<senv:Envelope xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intuit="http://developer.intuit.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap_http="http://schemas.xmlsoap.org/soap/http">
+  <senv:Header/>
+  <senv:Body>
+    <intuit:myfnResponse>
+      <intuit:myfnResult xsi:type="xs:string">hey5</intuit:myfnResult>
+    </intuit:myfnResponse>
+  </senv:Body>
+</senv:Envelope>
+
+
+
+<senv:Envelope xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://developer.intuit.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <senv:Header/>
+    <senv:Body>
+        <ns1:myfnResponse>
+            <ns1:myfnResult xsi:type="http://www.w3.org/2001/XMLSchema:string">sadfsdf5</ns1:myfnResult>
+        </ns1:myfnResponse>
+    </senv:Body>
+</senv:Envelope>
+
+
+<senv:Envelope xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://developer.intuit.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/">
+	<senv:Header />
+	<senv:Body>
+		<s0:serverVersionResponse>
+			<s0:serverVersionResult xsi:type="xs:string">v0.01</s0:serverVersionResult>
+		</s0:serverVersionResponse>
+	</senv:Body>
+</senv:Envelope>
+
+
+
+
+<senv:Envelope xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap_http="http://schemas.xmlsoap.org/soap/http" xmlns:intuit="http://developer.intuit.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <senv:Header/>
+  <senv:Body>
+    <intuit:myfnResponse>
+      <intuit:myfnResult xsi:type="xs:string">hey5</intuit:myfnResult>
+    </intuit:myfnResponse>
+  </senv:Body>
+</senv:Envelope>
+
+
+
+[
+    <Element:0x2573f10 name="arg1" type="(u'string', u'http://www.w3.org/2001/XMLSchema')" />, 
+    <Element:0x2573f90 name="arg2" type="(u'integer', u'http://www.w3.org/2001/XMLSchema')" />
+]
+
+
+{
+    arg1: <Element:0x2573f10 name="arg1" type="(u'string', u'http://www.w3.org/2001/XMLSchema')" />, 
+    arg2: <Element:0x2573f90 name="arg2" type="(u'integer', u'http://www.w3.org/2001/XMLSchema')" />
+}
+

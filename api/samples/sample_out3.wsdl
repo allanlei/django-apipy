@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intuit="http://developer.intuit.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap_http="http://schemas.xmlsoap.org/soap/http"
+targetNamespace="http://developer.intuit.com/" name="QuickbooksWS">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://developer.intuit.com/">
+			<xs:element type="intuit:myfn3" name="myfn3" />
+			<xs:element type="intuit:myfn2" name="myfn2" />
+			<xs:element type="intuit:myfn3Response" name="myfn3Response" />
+			<xs:element type="intuit:myfn2Response" name="myfn2Response" />
+			<xs:element type="intuit:stringArray" name="stringArray" />
+			<xs:element type="intuit:integerArray" name="integerArray" />
+			<xs:complexType name="myfn3">
+				<xs:sequence>
+					<xs:element nillable="true" type="xs:string" name="arg1" minOccurs="0" />
+					<xs:element nillable="true" type="xs:integer" name="arg2" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="myfn2">
+				<xs:sequence>
+					<xs:element nillable="true" type="xs:integer" name="arg1" minOccurs="0" />
+					<xs:element nillable="true" type="xs:integer" name="arg2" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="myfn3Response">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" nillable="true" type="xs:stringArray" name="myfn3Result" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="myfn2Response">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" nillable="true" type="xs:integerArray" name="myfn2Result" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stringArray">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" nillable="true" type="xs:string" name="string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="integerArray">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" nillable="true" type="xs:integer" name="integer" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="myfn3">
+		<wsdl:part name="myfn3" element="intuit:myfn3" />
+	</wsdl:message>
+	<wsdl:message name="myfn2">
+		<wsdl:part name="myfn2" element="intuit:myfn2" />
+	</wsdl:message>
+	<wsdl:message name="myfn3Response">
+		<wsdl:part name="myfn3Response" element="intuit:myfn3Response" />
+	</wsdl:message>
+	<wsdl:message name="myfn2Response">
+		<wsdl:part name="myfn2Response" element="intuit:myfn2Response" />
+	</wsdl:message>
+	<wsdl:service name="QuickbooksWS">
+		<wsdl:port binding="intuit:QuickbooksWS" name="QuickbooksWS">
+			<soap:address location="https://app.rhinoaccounting.com/qb/wc/test/" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:portType name="QuickbooksWS">
+		<wsdl:operation parameterOrder="myfn3" name="myfn3">
+			<wsdl:input message="intuit:myfn3" name="myfn3" />
+			<wsdl:output message="intuit:myfn3Response" name="myfn3Response" />
+		</wsdl:operation>
+		<wsdl:operation parameterOrder="myfn2" name="myfn2">
+			<wsdl:input message="intuit:myfn2" name="myfn2" />
+			<wsdl:output message="intuit:myfn2Response" name="myfn2Response" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding type="intuit:QuickbooksWS" name="QuickbooksWS">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="myfn3">
+			<soap:operation soapAction="myfn3" style="document" />
+			<wsdl:input name="myfn3">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="myfn3Response">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="myfn2">
+			<soap:operation soapAction="myfn2" style="document" />
+			<wsdl:input name="myfn2">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="myfn2Response">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>
+

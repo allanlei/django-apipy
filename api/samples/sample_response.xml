@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<senv:Envelope xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
+xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="http://developer.intuit.com/" xmlns:s12env="http://www.w3.org/2003/05/soap-envelope/"
+xmlns:s12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<senv:Header />
+	<senv:Body>
+		<s0:clientVersionResponse>
+			<s0:clientVersionResult xsi:type="xs:string"></s0:clientVersionResult>
+		</s0:clientVersionResponse>
+	</senv:Body>
+</senv:Envelope>
+

@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
+xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="http://developer.intuit.com/" xmlns:s12env="http://www.w3.org/2003/05/soap-envelope/"
+xmlns:s12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+targetNamespace="http://developer.intuit.com/" name="QuickbooksWSDLApplication">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://developer.intuit.com/" elementFormDefault="qualified">
+			<xs:element name="authenticate" type="s0:authenticate" />
+			<xs:element name="stringArray" type="s0:stringArray" />
+			<xs:element name="authenticateResponse" type="s0:authenticateResponse" />
+			<xs:element name="clientVersion" type="s0:clientVersion" />
+			<xs:element name="clientVersionResponse" type="s0:clientVersionResponse" />
+			<xs:element name="closeConnection" type="s0:closeConnection" />
+			<xs:element name="closeConnectionResponse" type="s0:closeConnectionResponse" />
+			<xs:element name="connectionError" type="s0:connectionError" />
+			<xs:element name="connectionErrorResponse" type="s0:connectionErrorResponse" />
+			<xs:element name="getInteractiveURL" type="s0:getInteractiveURL" />
+			<xs:element name="getInteractiveURLResponse" type="s0:getInteractiveURLResponse" />
+			<xs:element name="getLastError" type="s0:getLastError" />
+			<xs:element name="getLastErrorResponse" type="s0:getLastErrorResponse" />
+			<xs:element name="getServerVersion" type="s0:getServerVersion" />
+			<xs:element name="getServerVersionResponse" type="s0:getServerVersionResponse" />
+			<xs:element name="interactiveDone" type="s0:interactiveDone" />
+			<xs:element name="interactiveDoneResponse" type="s0:interactiveDoneResponse" />
+			<xs:element name="interactiveRejected" type="s0:interactiveRejected" />
+			<xs:element name="interactiveRejectedResponse" type="s0:interactiveRejectedResponse" />
+			<xs:element name="receiveResponseXML" type="s0:receiveResponseXML" />
+			<xs:element name="receiveResponseXMLResponse" type="s0:receiveResponseXMLResponse" />
+			<xs:element name="sendRequestXML" type="s0:sendRequestXML" />
+			<xs:element name="sendRequestXMLResponse" type="s0:sendRequestXMLResponse" />
+			<xs:element name="serverVersion" type="s0:serverVersion" />
+			<xs:element name="serverVersionResponse" type="s0:serverVersionResponse" />
+			<xs:complexType name="authenticate">
+				<xs:sequence>
+					<xs:element name="strUserName" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="strPassword" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stringArray">
+				<xs:sequence>
+					<xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="authenticateResponse">
+				<xs:sequence>
+					<xs:element name="authenticateResult" type="s0:stringArray" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientVersion">
+				<xs:sequence>
+					<xs:element name="strVersion" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientVersionResponse">
+				<xs:sequence>
+					<xs:element name="clientVersionResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="closeConnection">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="closeConnectionResponse">
+				<xs:sequence>
+					<xs:element name="closeConnectionResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="connectionError">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="hresult" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="message" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="connectionErrorResponse">
+				<xs:sequence>
+					<xs:element name="connectionErrorResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getInteractiveURL">
+				<xs:sequence>
+					<xs:element name="wcTicket" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="sessionID" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getInteractiveURLResponse">
+				<xs:sequence>
+					<xs:element name="getInteractiveURLResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getLastError">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getLastErrorResponse">
+				<xs:sequence>
+					<xs:element name="getLastErrorResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getServerVersion">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getServerVersionResponse">
+				<xs:sequence>
+					<xs:element name="getServerVersionResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="interactiveDone">
+				<xs:sequence>
+					<xs:element name="wcTicket" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="interactiveDoneResponse">
+				<xs:sequence>
+					<xs:element name="interactiveDoneResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="interactiveRejected">
+				<xs:sequence>
+					<xs:element name="wcTicket" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="reason" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="interactiveRejectedResponse">
+				<xs:sequence>
+					<xs:element name="interactiveRejectedResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="receiveResponseXML">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="response" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="hresult" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="message" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="receiveResponseXMLResponse">
+				<xs:sequence>
+					<xs:element name="receiveResponseXMLResult" type="xs:integer" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sendRequestXML">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="strHCPResponse" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="strCompanyFileName" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="qbXMLCountry" type="xs:string" minOccurs="0" nillable="true" />
+					<xs:element name="qbXMLMajorVers" type="xs:integer" minOccurs="0" nillable="true" />
+					<xs:element name="qbXMLMinorVers" type="xs:integer" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sendRequestXMLResponse">
+				<xs:sequence>
+					<xs:element name="sendRequestXMLResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="serverVersion">
+				<xs:sequence>
+					<xs:element name="ticket" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="serverVersionResponse">
+				<xs:sequence>
+					<xs:element name="serverVersionResult" type="xs:string" minOccurs="0" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="authenticate">
+		<wsdl:part name="authenticate" element="s0:authenticate" />
+	</wsdl:message>
+	<wsdl:message name="authenticateResponse">
+		<wsdl:part name="authenticateResponse" element="s0:authenticateResponse" />
+	</wsdl:message>
+	<wsdl:message name="clientVersion">
+		<wsdl:part name="clientVersion" element="s0:clientVersion" />
+	</wsdl:message>
+	<wsdl:message name="clientVersionResponse">
+		<wsdl:part name="clientVersionResponse" element="s0:clientVersionResponse" />
+	</wsdl:message>
+	<wsdl:message name="closeConnection">
+		<wsdl:part name="closeConnection" element="s0:closeConnection" />
+	</wsdl:message>
+	<wsdl:message name="closeConnectionResponse">
+		<wsdl:part name="closeConnectionResponse" element="s0:closeConnectionResponse" />
+	</wsdl:message>
+	<wsdl:message name="connectionError">
+		<wsdl:part name="connectionError" element="s0:connectionError" />
+	</wsdl:message>
+	<wsdl:message name="connectionErrorResponse">
+		<wsdl:part name="connectionErrorResponse" element="s0:connectionErrorResponse" />
+	</wsdl:message>
+	<wsdl:message name="getInteractiveURL">
+		<wsdl:part name="getInteractiveURL" element="s0:getInteractiveURL" />
+	</wsdl:message>
+	<wsdl:message name="getInteractiveURLResponse">
+		<wsdl:part name="getInteractiveURLResponse" element="s0:getInteractiveURLResponse" />
+	</wsdl:message>
+	<wsdl:message name="getLastError">
+		<wsdl:part name="getLastError" element="s0:getLastError" />
+	</wsdl:message>
+	<wsdl:message name="getLastErrorResponse">
+		<wsdl:part name="getLastErrorResponse" element="s0:getLastErrorResponse" />
+	</wsdl:message>
+	<wsdl:message name="getServerVersion">
+		<wsdl:part name="getServerVersion" element="s0:getServerVersion" />
+	</wsdl:message>
+	<wsdl:message name="getServerVersionResponse">
+		<wsdl:part name="getServerVersionResponse" element="s0:getServerVersionResponse" />
+	</wsdl:message>
+	<wsdl:message name="interactiveDone">
+		<wsdl:part name="interactiveDone" element="s0:interactiveDone" />
+	</wsdl:message>
+	<wsdl:message name="interactiveDoneResponse">
+		<wsdl:part name="interactiveDoneResponse" element="s0:interactiveDoneResponse" />
+	</wsdl:message>
+	<wsdl:message name="interactiveRejected">
+		<wsdl:part name="interactiveRejected" element="s0:interactiveRejected" />
+	</wsdl:message>
+	<wsdl:message name="interactiveRejectedResponse">
+		<wsdl:part name="interactiveRejectedResponse" element="s0:interactiveRejectedResponse" />
+	</wsdl:message>
+	<wsdl:message name="receiveResponseXML">
+		<wsdl:part name="receiveResponseXML" element="s0:receiveResponseXML" />
+	</wsdl:message>
+	<wsdl:message name="receiveResponseXMLResponse">
+		<wsdl:part name="receiveResponseXMLResponse" element="s0:receiveResponseXMLResponse" />
+	</wsdl:message>
+	<wsdl:message name="sendRequestXML">
+		<wsdl:part name="sendRequestXML" element="s0:sendRequestXML" />
+	</wsdl:message>
+	<wsdl:message name="sendRequestXMLResponse">
+		<wsdl:part name="sendRequestXMLResponse" element="s0:sendRequestXMLResponse" />
+	</wsdl:message>
+	<wsdl:message name="serverVersion">
+		<wsdl:part name="serverVersion" element="s0:serverVersion" />
+	</wsdl:message>
+	<wsdl:message name="serverVersionResponse">
+		<wsdl:part name="serverVersionResponse" element="s0:serverVersionResponse" />
+	</wsdl:message>
+	<wsdl:service name="QuickbooksWSDLApplication">
+		<wsdl:port name="QuickbooksWSDLApplication" binding="s0:QuickbooksWSDLApplication">
+			<soap:address location="http://127.0.0.1:8000/qb/wc/quickbooks" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:portType name="QuickbooksWSDLApplication">
+		<wsdl:operation name="authenticate" parameterOrder="authenticate">
+			<wsdl:input name="authenticate" message="s0:authenticate" />
+			<wsdl:output name="authenticateResponse" message="s0:authenticateResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="clientVersion" parameterOrder="clientVersion">
+			<wsdl:input name="clientVersion" message="s0:clientVersion" />
+			<wsdl:output name="clientVersionResponse" message="s0:clientVersionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="closeConnection" parameterOrder="closeConnection">
+			<wsdl:input name="closeConnection" message="s0:closeConnection" />
+			<wsdl:output name="closeConnectionResponse" message="s0:closeConnectionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="connectionError" parameterOrder="connectionError">
+			<wsdl:input name="connectionError" message="s0:connectionError" />
+			<wsdl:output name="connectionErrorResponse" message="s0:connectionErrorResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getInteractiveURL" parameterOrder="getInteractiveURL">
+			<wsdl:input name="getInteractiveURL" message="s0:getInteractiveURL" />
+			<wsdl:output name="getInteractiveURLResponse" message="s0:getInteractiveURLResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getLastError" parameterOrder="getLastError">
+			<wsdl:input name="getLastError" message="s0:getLastError" />
+			<wsdl:output name="getLastErrorResponse" message="s0:getLastErrorResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getServerVersion" parameterOrder="getServerVersion">
+			<wsdl:input name="getServerVersion" message="s0:getServerVersion" />
+			<wsdl:output name="getServerVersionResponse" message="s0:getServerVersionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="interactiveDone" parameterOrder="interactiveDone">
+			<wsdl:input name="interactiveDone" message="s0:interactiveDone" />
+			<wsdl:output name="interactiveDoneResponse" message="s0:interactiveDoneResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="interactiveRejected" parameterOrder="interactiveRejected">
+			<wsdl:input name="interactiveRejected" message="s0:interactiveRejected" />
+			<wsdl:output name="interactiveRejectedResponse" message="s0:interactiveRejectedResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="receiveResponseXML" parameterOrder="receiveResponseXML">
+			<wsdl:input name="receiveResponseXML" message="s0:receiveResponseXML" />
+			<wsdl:output name="receiveResponseXMLResponse" message="s0:receiveResponseXMLResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="sendRequestXML" parameterOrder="sendRequestXML">
+			<wsdl:input name="sendRequestXML" message="s0:sendRequestXML" />
+			<wsdl:output name="sendRequestXMLResponse" message="s0:sendRequestXMLResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="serverVersion" parameterOrder="serverVersion">
+			<wsdl:input name="serverVersion" message="s0:serverVersion" />
+			<wsdl:output name="serverVersionResponse" message="s0:serverVersionResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="QuickbooksWSDLApplication" type="s0:QuickbooksWSDLApplication">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="authenticate">
+			<soap:operation soapAction="authenticate" style="document" />
+			<wsdl:input name="authenticate">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="authenticateResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="clientVersion">
+			<soap:operation soapAction="clientVersion" style="document" />
+			<wsdl:input name="clientVersion">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="clientVersionResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="closeConnection">
+			<soap:operation soapAction="closeConnection" style="document" />
+			<wsdl:input name="closeConnection">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="closeConnectionResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="connectionError">
+			<soap:operation soapAction="connectionError" style="document" />
+			<wsdl:input name="connectionError">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="connectionErrorResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getInteractiveURL">
+			<soap:operation soapAction="getInteractiveURL" style="document" />
+			<wsdl:input name="getInteractiveURL">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getInteractiveURLResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getLastError">
+			<soap:operation soapAction="getLastError" style="document" />
+			<wsdl:input name="getLastError">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getLastErrorResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getServerVersion">
+			<soap:operation soapAction="getServerVersion" style="document" />
+			<wsdl:input name="getServerVersion">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getServerVersionResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="interactiveDone">
+			<soap:operation soapAction="interactiveDone" style="document" />
+			<wsdl:input name="interactiveDone">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="interactiveDoneResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="interactiveRejected">
+			<soap:operation soapAction="interactiveRejected" style="document" />
+			<wsdl:input name="interactiveRejected">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="interactiveRejectedResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="receiveResponseXML">
+			<soap:operation soapAction="receiveResponseXML" style="document" />
+			<wsdl:input name="receiveResponseXML">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="receiveResponseXMLResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="sendRequestXML">
+			<soap:operation soapAction="sendRequestXML" style="document" />
+			<wsdl:input name="sendRequestXML">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="sendRequestXMLResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="serverVersion">
+			<soap:operation soapAction="serverVersion" style="document" />
+			<wsdl:input name="serverVersion">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="serverVersionResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>
+

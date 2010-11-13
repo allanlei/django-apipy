@@ -1,0 +1,9 @@
+<senv:Envelope xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intuit="http://developer.intuit.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap_http="http://schemas.xmlsoap.org/soap/http">
+  <senv:Header/>
+  <senv:Body>
+    <intuit:myfnResponse>
+      <intuit:myfnResult xsi:type="xs:string">hey5</intuit:myfnResult>
+    </intuit:myfnResponse>
+  </senv:Body>
+</senv:Envelope>
+

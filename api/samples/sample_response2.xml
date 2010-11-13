@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<senv:Envelope xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
+xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="http://developer.intuit.com/" xmlns:s12env="http://www.w3.org/2003/05/soap-envelope/"
+xmlns:s12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<senv:Header />
+	<senv:Body>
+		<s0:serverVersionResponse>
+			<s0:serverVersionResult xsi:type="xs:string">v0.01</s0:serverVersionResult>
+		</s0:serverVersionResponse>
+	</senv:Body>
+</senv:Envelope>
+
+
+
+
+
+<ns1:getEmployeeDetailsResponse xmlns:ns1="urn:MySoapServices" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+	<return xmlns:ns2="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns2:Array" ns2:arrayType="xsd:string[2]">
+		<item xsi:type="xsd:string">Bill Posters</item>
+	    <item xsi:type="xsd:string">+1-212-7370194</item>
+    </return>
+
+</ns1:getEmployeeDetailsResponse>
+		
+<SelectItems xsi:type="soapenc:Array" soapenc:arrayType="tns:SelectItem[1]">
+    <item xsi:type="tns:SelectItem"><Item xsi:type="xsd:string">SEP0017593F52C4</Item></item>
+    <item xsi:type="tns:SelectItem"><Item xsi:type="xsd:string">SEP0007EB9F1118</Item></item>
+</SelectItems>
